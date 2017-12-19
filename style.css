@@ -1,0 +1,972 @@
+/*Подключения шрифта*/
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src:
+     	local("Roboto Regular"),
+     	local("Roboto-Regular"),
+     	url("/assets/course73/roboto.woff") format("woff");
+}
+
+
+
+table {
+	border: 6px solid black;
+	border-collapse: collapse; /*Значение collapse убирает двойные рамки: 
+	cхлопываются рамки соседних ячеек, а также рамки 
+	ячеек и внешняя рамка таблицы. При этом внешняя 
+	рамка таблицы может исчезнуть, и чтобы её вернуть, 
+	можно увеличить её ширину. */
+	padding-spacing: 5px; /* задаёт расстояние между ячеек */
+	caption-side: top; /*выравнивание заголовка таблицы*/
+	caption-side: bottom;
+}
+
+caption {
+	caption-side: bottom;
+	text-align: left;
+}
+
+td {
+    border: 3px solid lightgray;
+    border-top: ;
+    border-right: ;
+    border-bottom: ;
+    border-left: ;
+
+    vertical-align: top; /* вертикальное выравнивание содержимого в ячейке */
+    vertical-align: middle;
+    vertical-align: bottom;
+}
+
+/* Class simple для примера содержания различных атрибутов */
+.simple {
+
+	/* отступы элементов */
+	padding: 20px;
+	padding-left: ;
+	padding-right: ;
+	padding-top: ;
+	padding-bottom: ;
+
+	/* Выравнивание текста */
+	text-align: left;
+	text-align: right;
+	text-align: center;
+
+	background-color: #fff; /*задаёт цвет фона*/
+	color: #000; /*цвет текста*/
+	border-color: #000; /*цвет рамок*/
+
+	width: 50%;/*Ширина, % вычисляются с учётом размеров родительского элемента*/
+	height: 100px;/*Высота*/
+
+	/*форматирование текста*/
+	text-decoration: underline;
+	font-weight: bold;
+	font-style: italic;
+
+	/*отступы*/
+	margin: 20px; /*внешний отступ*/
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	padding: 20px; /*внутренний отступ*/
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	/*позиционирование*/
+	position: relative;
+	position: absolute;/*Другие элементы как бы перестают 
+	их замечать и то место, где располагается абсолютно 
+	позиционированный элемент, считают пустым.*/
+
+	left: 0px;/*управляет расположением элемента*/
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+
+	float: left;
+	float: right;
+
+	z-index: 3; /*управляет порядком слоёв*/
+
+	clear: both; /*для подвала*/
+}
+
+/*Selectors*/
+h1, span, li { /*Это селекторы по тегам*/ }
+.class { /*по классам*/ }
+#id { /*по айди*/ }
+.class>li { /*наследственный класс*/ }
+
+.menu a { /*контекстный селектор сработает для ссылки а*/ }
+span + a { /*соседний селектор сработает если после span стоит a*/ }
+.class .man + a { /*сработает если а сразу после .man 
+и оба тега в обернуты в .class*/ }
+li>span { /*дочерний селектор*/ }
+
+ul {
+	list-style: none; /*уберает маркеры в списках*/
+}
+
+li {
+	background: inherit; /*свойство inherit наследует 
+	родительское свойство*/
+}
+
+.blue {
+	color: blue !important; /*задаёт свойству усиленный приоритет*/
+}
+
+span {
+	font-size: 1em; /*задаёт размер шрифта 
+	(em длинна буквы М в шрифте)*/
+	font-weight: bold; /*толщина шрифта*/
+	font-weight: normal; 
+
+	font-style: italic; /*начертание текста*/
+
+	font-family: "PT Sans", "Arial", serif;/*задать семейство шрифта*/
+
+	color: #000; /*задаёт цвет текста*/
+	color: rgb(255, 255, 0);
+	color: red;
+
+	text-decoration: underline;/*подчеркивание*/
+	text-decoration: line-through;/*зачеркивание*/
+	text-decoration: overline;/*черта сверху*/
+	text-decoration: none;/*убирает все эффекты*/
+
+	border-bottom: 1px dashed #0088CC; /*эфект подчеркивания пунктиром*/
+
+	/*свойства регистра*/
+	text-transform: lowercase;/*все строчные*/
+	text-transform: uppercase;/*все прописные*/
+	text-transform: capitalize;/*каждое слово начинается с прописной*/
+	text-transform: none;/*отменяет изменения регистра*/
+
+	white-space: nowrap;/*текст без переносов*/
+	white-space: pre;/*сохраняет пробелы и переносы, аналог pre*/
+	white-space: pre-wrap;/*+переносы если не помещается в контейнер*/
+	white-space: normal;/*по умолчанию*/
+
+	/*выравнивание по горизонтале*/
+	text-align: left;
+	text-align: right;
+	text-align: center;
+	text-align: justify;/*выравнивание по ширине*/
+
+	/*выравнивание по вертикале*/
+	vertical-align: top;
+	vertical-align: middle; /*по середине*/
+	vertical-align: bottom;
+	vertical-align: baseline; /*по базовой линии*/
+	vertical-align: sub; /*имитация тега sub*/
+	vertical-align: super; /*имитация тега sup*/
+
+	/*межстрочный интервал*/
+	line-height; 1.5;
+	line-height: 20px;
+	line-height: 2em;
+	line-height: 50%;
+
+	text-indent: -20px; /*Устанавливает величину отступа 
+	первой строки блока текста (например, для абзаца <p>)*/
+}
+
+/*Backgrounds*/
+.background {
+	background-color: #000;/*цвет фона*/
+	background-image: url("image.png");
+	background-repeat: repeat; /*повторять во всех направлениях*/
+	background-repeat: repeat-x; /*повторять только по горизонтале*/
+	background-repeat: repeat-y; /*повторять по вертикале*/
+	background-repeat: no-repeat; /*не повторять*/
+
+	/*выравнивание по x y (горизонтали и вертикале*/
+	background-position: 50% 50%;
+	background-position: right bottom;
+	background-position: 50px 100px;
+	background-position: 0 100%;
+	background-position: left bottom; 
+
+	background-attachment: scroll; /*фон прокручивается*/
+	background-attachment: fixed; /*не подвижный фон*/
+
+	background: [bc] [bi] [br] [bp] [ba];
+	/* Обозначения:
+	[bc] — background-color
+	[bi] — background-image
+	[br] — background-repeat
+	[bp] — background-position
+	[ba] — background-attachment
+	пример*/
+	background: #000 no-repeat 20px 30px fixed;
+
+	/*вложенные фоны (в этом случае задать цвет нельзя)*/
+	background:
+		url("image1.png") no-repeat, /*данная картинка на верхнем слое*/
+		url("image2.png") no-repeat 20px 30px,
+		url("image3.png") no-repeat 10px 0;
+	
+	/*для использования спрайтов (картинки со всеми иконками) 
+	достаточно использовать свойство*/
+	background-position: -20px -278px;
+}
+
+/*Отступы*/
+.padding .margin .border {
+	/*Внутренний отступ*/	
+	padding: 10px; /*Одинаковые отступы со всех сторон*/
+	padding: 5px 10px; /*Отступы сверху и снизу 5px, 
+	справа и слева 10px*/
+	padding: 5px 10px 15px; /*Отступ сверху 5px, 
+	слева и справа 10px, снизу 15px*/
+	padding: 5px 10px 15px 20px; /*Разные отступы со всех сторон, 
+	в порядке верхний, правый, нижний, левый.*/
+
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+
+	/*Внешний отступ (Вертикальный отступ между двумя соседними 
+	элементами равен максимальному отступу между ними. 
+	Если отступ одного элемента равен 20px, а второго 40px, 
+	то отступ между ними будет 40px)*/	
+	margin: 10px; /*Одинаковые отступы со всех сторон*/
+	margin: 5px 10px; /*Отступы сверху и снизу 5px, 
+	справа и слева 10px*/
+	margin: 5px 10px 15px; /*Отступ сверху 5px, 
+	слева и справа 10px, снизу 15px*/
+	margin: 5px 10px 15px 20px; /*Разные отступы со всех сторон, 
+	в порядке верхний, правый, нижний, левый.*/
+
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+	margin-left: 20px;
+
+	/*Рамки*/
+	border: 5px solid red;
+
+	border-width: 5px;
+	border-style: solid;
+	border-color: red;
+
+	border-style: solid; /*Сплошная*/
+	border-style: dashed; /*Пунктирная*/
+	border-style: dotted; /*Точками*/
+}
+
+.display {
+	box-sizing: content-box; /*обычный блочный режим*/
+	box-sizing: border-box; /*задаёт общую ширину с учётом border*/
+
+	display: block; /*блочный элемент (перенос строки до и после)*/
+	display: inline; /*строчный элемент (не реагирует на ширину)*/
+	display: inline-block; /*блочно-строчный (размер, в одну строку)*/
+	display: table; /*как block но по умолчанию ширина по содержанию*/
+	display: table-row; /*строка как <tr>*/
+	display: table-cell; /*ячейка как <td>*/
+
+	display: none; /*скрывает элемент и не занимает места*/
+	visibility: hidden; /*скрывает элемент и занимает места (пусто)*/
+}
+
+.float {
+	float: left;
+	float: right;
+	float: none;
+}
+
+.clear { /*запрещает обтекание элемента другими элементами*/
+	clear: left; /*запрещено обтекание слева;*/
+	clear: right; /*запрещено обтекание справа;*/
+	clear: both; /*запрещено обтекание с обеих сторон;*/
+	clear: none; /*обтекание разрешено.*/
+}
+
+/*при зафлоченых элементах родитель схлопывается. 
+для этого есть решения последним элементом сделать распорку*/
+.clearfix {
+	height: 0;
+	clear: both;
+}
+
+.clearfix::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+/*позиционирование*/
+.position {
+	position: static; /*обычное позиционирование*/
+	position: relative; /*относительное*/
+
+	top: 10px; /*сдвигает элемент относительно его места*/
+	left: 10px;
+	bottom: 10px;
+	right: 10px;
+
+	position: absolute; /*абсолютно спозиционированный 
+	(место становится пустым, ширина зависит от содержимого,
+	остается на том же месте)*/
+	left: 10px; /*располагает элемент от левого края окна браузера*/
+	
+	/*если родителю задано позиционирование relative, то дочерний 
+	элемент спозиционированный в absolute расчитывает координаты родителя
+	при свойствах top... (если эти свойства не заданы можно двигать 
+	элемент с помощью margin)*/
+
+	position: fixed; /*фиксированное позиционирование (выпадает из потока, 
+	привязывается к точки и остается на месте при прокрутке странице)*/
+
+	z-index: 9; /*слои перекрывающие друг друга элементы 
+	(работает для элементорв спозиционированных как absolute, fixed и relative)*/
+	
+}
+
+.main-menu > .active > a {} /*Подсвечиваться будет только ссылка 
+верхнего уровня.*/
+
+
+.main-menu > li .sub-menu {
+	display: block; /*вариант раскрывания подменю*/	
+}
+
+.opacity {
+	opacity: .3; /*непрозрачность*/
+}
+
+
+/* --- Selectors --- */
+
+.seletors:not(:last-child) {
+	/*Исключает указанный селектор*/
+}
+
+.selector:nth-last-child(2n) {
+	/*В отличие от псевдокласса :nth-child, отсчет ведется 
+	не от первого элемента, а от последнего.*/
+}
+
+ul:first-of-type {}
+ul:last-of-type {}
+ul:nth-of-type(2n+1) {}
+ul:nth-last-of-type(4) {}
+
+.queen.heart + li {} /*выделяет один жлемент li стоящий справа*/
+.king.diamond ~ li {} /*выделяет все li соящие справа*/
+
+ul:empty {} /*пустой, без дочерних элементов*/
+
+li:only-child {} /*когда li в списке единственный*/
+
+p:only-of-type {} /*если p единственный в своем родители*/
+
+ul::before { /*псевдоэлемент идущий до элемента*/
+	content: '';
+}
+
+ul::after { /*псевдоэлемент идущий после*/
+	content: '';
+}
+
+p::first-line {} /*выделяет первую строку абзаца*/
+p::first-letter {} /*выделяет первую букву абзаца*/
+
+[class^="column-"] {} /*выделяет классы у которых 
+имя начинается на column-*/
+input[name^="cat"] {} /*все инпуты с именем в начале cat*/
+a[href$=".pdf"] {} /*выделяет все ссылки с расширением в конце*/
+[class*="correct"] {} /*содержание в любом месте*/
+input[value~="имя"] {} /*ищет слово в строке*/
+[class|="bar"] {} /*префикс bar или bar-*/
+
+input:enabled {}
+input:disabled {}
+input:read-only {}
+input:read-write {}
+input[readonly] {} /*альтернатива для read-only*/
+input([readonly]) /*альтернатива для read-write*/
+
+input:required {} /*обязательные для заполнения поля*/
+select:otional {} /*обратное действие*/
+
+input:checked {} /*для отмеченных элементов checkbox или radio*/
+
+input:valid {} /*там где значения введены корректно*/
+input:invalid {} /*и там где введенные значения 
+не соответствуют требуемым параметрам*/
+
+/*для поля type="number" с диапазоном min и max*/
+input:in-range {} /*в диапазоне*/
+input:out-of-range {} /*вне диапазона*/
+
+/*Можно объединять псевдоселекторы*/
+input[type="checkbox"]:required:checked {}
+
+input:checked ~ .box {} /*интересный приём влияние на элементы 
+следующие за отмеченным элементом*/
+
+/*Пример стилизации радиобаттона, при его скрытии*/
+input[type=radio] + label {...}
+input[type=radio]:checked + label {...}
+input[type=radio]:disabled + label {...}
+
+
+/*Background 2*/
+.background_2 {
+	background-size: auto auto; /*исходные значения*/
+	background-size: 100px; /*ширина 100 высота пропорционально*/
+	background-size: 100px 200px; /*ширина 100 высота 200*/
+
+	background-size: contain; /*максимальный размер в родителе 
+	с сохранением пропорции*/
+	background-size: cover; /*заполнение всего родителя 
+	с сохранением пропорции*/
+
+	background-origin: content-box | padding-box | border-box; /*
+	заполнение фоном*/
+	background-clip: content-box | padding-box | border-box; /*
+	обрезка фона*/
+	
+	/*Двойной фон задаётся через запятую*/
+	background: url(""), url("");
+	/*Также все остальные параметры задаются через запятую*/
+	background-size: 100px, contain;
+
+	/*Позиция фона от разных сторон
+	по умолчанию координаты задаются для левого верхнего угла */
+	background-position: 10px 50px; /* слева 10px, сверху 50px */
+
+	background-position: right 30px bottom 60px; /* справа 30px, снизу 60px */
+	background-position: left 50px bottom 10px; /* слева 50px, снизу 10px */
+	background-position: right 40px top 30px; /* справа 40px, сверху 30px */
+
+	/*повторение фона*/
+	background-repeat: round repeat; /*первое значение по горизонтали 
+	(repeat-растягивает размер фона к краю картинки) второе по вертикале*/
+	background-repeat: space round; /*space-не растягивает изображение, 
+	а добовлет пространство между картинками*/
+
+	/*Рамки*/
+	/* сплошная чёрная рамка толщиной 10px */
+	outline: 10px solid black;
+
+	outline-width: 10px;  /* толщина */
+	outline-style: solid; /* стиль */
+	outline-color: black; /* цвет */
+
+	outline-offset: 10px; /*отступ у рамки (отрицательное значение 
+	втянет её в элемент)*/
+
+	outline-style: ridge; /*создаёт объемную рамку*/
+	outline-style: groove; /*тоже самое только инверсия*/
+
+	border-radius: 10px 20px;
+	border-radius: 50%; /*круг*/
+
+	/*скругление отдельных углов*/
+	border-top-left-radius: 30px 15px; /*первое значение по горизонтале
+	второе по вертикале*/
+	border-top-right-radius: ;
+	border-bottom-left-radius: ;
+	border-bottom-right-radius: ;
+
+	/*так же можно задавать горизонтальный и вертикальный радиус через / */
+	border-radius: 10px / 5px;
+	border-radius: 10px 12px 20px 24px / 15px 20px 10px 30px;
+
+	border-radius: 1px 2px 3px 4px;
+	/*
+	1px - верхний левый угол
+	2px - верхний правый угол
+	3px - нижний правый угол
+	4px - нижний левый угол
+	*/
+
+	/*фоновая картинка для рамки*/
+	border-image-source: url("image.jpg");
+	border-image-slice: 60;
+	border-image-slice: 10%;
+	
+	/*fill и центр картинки заполняет пространство*/
+	border-image-slice: 10 20 30 40 fill;
+
+	/* все стороны рамки заполняются в режиме stretch */
+	border-image-repeat: stretch;
+	/* горизонтальные стороны — режим repeat, вертикальные — stretch */
+	border-image-repeat: repeat stretch;
+	/* заполняет растягивая картинки во все пространство*/
+	border-image-repeat: round;
+
+	/*ширина картинки фона рамки*/
+	border-image-width: 10px 20px 30px 40px;
+	border-image-width: 10px 50px;
+
+	/*отступы рамок-изображения*/
+	border-image-outset: 10px;
+	border-image-outset: 10px 20px 30px 40px;
+
+	/*стрелка треугольник вниз*/
+	border: 100px solid #ffffff;
+	border-top-color: #0074d9;
+	border-bottom: 0px;
+	border-right-color: transparent;
+	border-left-color: transparent;
+
+	/*стрелка по диагонали верх право*/
+	border: 100px solid #ffffff;
+	border-top-color: #0074d9;
+	border-bottom: 0;
+	border-right: 0;
+	border-left-color: transparent;
+}
+
+.shadow__game {
+	box-shadow:
+		[inset] /*- если задать то тень внутренняя*/
+		5px     /*<- смещение по x*/
+		10px    /*- смещение по y*/
+		[2px]   /*- размытие*/
+		[3px]   /*- растяжение*/
+		[red];  /*- цвет*/
+	
+	/*прозрачная тень*/
+	box-shadow: 0 0 0 2px rgba(0, 35, 123, 0.5);
+
+	/*вариант наложения нескольких теней*/
+ 	box-shadow: 
+      0 0 0 5px #e74c3c,
+      0 0 0 10px #f1c40f,
+      0 0 0 15px #2ecc71;  
+}
+
+.gradient {
+	background-image: linear-gradient(yellow, green);
+	/*направление градиента задается с помощью right, left, bottom, top 
+	с приставкой to*/
+	background-image: linear-gradient(to right, yellow, green);
+	/*направление по диагонали с указанием конечного угла*/
+	background-image: linear-gradient(to right top, yellow, green);
+	/*также можно указать угол в градусах*/
+	background-image: linear-gradient(90deg, yellow, green);
+	/*несколько цветов*/
+	background-image: linear-gradient(to right, red, yellow, green);
+	/*колорстопы, после цвета задается где будет самая насыщенная часть*/
+	background-image: linear-gradient(red 33%, yellow 66%, green 100%);
+	/*Российский флаг*/
+	background-image: linear-gradient(#ffffff 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%);
+	/*повторяющийся градиент*/
+	background-image: repeating-linear-gradient(black 0px, green 25px, yellow 50px, black 75px);
+	/*множественные градиенты и размеры*/
+	background-image:
+     	linear-gradient(135deg, white 25%, transparent 25%),
+     	linear-gradient(225deg, white 25%, transparent 25%),
+     	none,
+     	none;
+	background-size:
+	    	100px 200px,
+	    	200px 300px,
+	    	200px 300px,
+	    	300px 400px;
+   	background-position: 
+	    	0 0,
+	    	0 0,
+	    	0 0,
+	    	0 0;
+   	/*радиальный градиент*/
+   	background: radial-gradient(#55ddff, #0081b5);
+}
+
+.transformation {
+	/*перемещение, трансформация по оси Х по гризрнту*/
+	transform: translateX(100px);
+	/*перемещение по оси Y по вертикале*/
+	transform: translateY(-100px);
+	/*двойное перемещение*/
+	transform: translateY(-100px) translateX(100px);
+	/*сокращенное двойное*/
+	transform: translate(290px, -190px);
+
+	/*Маштабирование(Если масштаб-по-Y не задан, 
+	то считается, что он такой же, как масштаб-по-X)*/
+	transform: scale(2);
+	transform: scaleX(2);
+	transform: scaleY(2);
+	transform: scale(2, 2);
+	/*отрицательное значение отзеркаливает объект*/
+	transform: scale(-1);
+	transform: scaleX(-1);
+	transform: scaleY(-2); /*если значение больше 1, 
+	то объект еще и увеличиться*/ 
+	transform: scale(-1, -1);
+
+	/*Поворот, при этом система координат тоже вращается*/
+	transform: rotate(180deg);
+
+	/*одновременное передвижение и поворот*/
+	transform: rotate(180deg) scale(0.5) translateX(200px) translateY(50px);
+
+	/*Наклоны*/
+	transform: skewX(45deg);
+	transform: skewY(30deg);
+
+	/*Точка отсчета координат*/
+	/*применяется например при маштабировании*/
+	transform-origin: top left;
+}
+
+/*пример анимации при трансформации*/
+/*если парметр transform будет меняться, выполнится анимация*/
+.picture {
+    transition: transform 0.5s ease;
+    transform: scale(1);
+    transform-origin: top left;
+}
+
+/*Пример позицианирования по центру*/
+.picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Оформление текста*/
+.text {
+	text-shadow: X Y blur #000;
+	text-shadow: 5px 5px 0px #000;
+
+	/*множественные текстовые тени*/
+	text-shadow: 
+      -1px -1px 1px #1e181c,
+      2px 2px 1px #52424d;
+
+   	/*Межсимвольное растояние*/
+   	letter-spacing: 0px;
+
+   	/*перенос слова по буквам*/
+   	word-wrap: break-word;
+
+   	/*перенос слова по пробелам*/
+   	word-wrap: normal;
+
+   	/*Отступ первой строки*/
+   	text-indent: 20px;
+
+   	/*Делит текст на заданное число колонок*/
+   	column-count: 3;
+
+   	/*определяет ширину колонки*/
+   	column-width: 200px;
+
+   	/*Расстояние между колонками*/
+   	column-gap: 30px;
+
+   	/*Определяет направление текста*/
+   	direction: ltr | rtl;
+
+   	/*переопределяет направление текста*/
+	unicode-bidi: normal | embed | bidi-override | ;
+
+   	/*текст обрезается по размеру контейнера*/
+	text-overflow: clip;
+   	/*обрезается и в конце добавляется ...*/
+   	/*данная вещь работает с одной строчкой в совокупности 
+   	с white-space: nowrap и overflow: hidden*/
+   	text-overflow: ellipsis;
+
+   	/*задает расстояние между словами и картинками*/
+   	word-spacing: 20px;
+}
+   
+/*первая буква в обзаце (буквица)*/
+p::first-letter { color: red; }
+/*первая строка*/
+p::first-line { color: green; }
+
+
+/************Animation***********/
+
+@keyframes stretching {
+	0% {
+		width: 100px;
+	}
+	100% {
+		width: 200px;
+	}
+}
+
+.button {
+   	animation-name: stretching;
+   	animation-duration: 1s;
+}
+
+/*пример вращения*/
+@keyframes rotate {
+   	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.wood-wheel {
+   	animation-name: rotate;
+   	animation-duration: 59s;
+}
+
+/*пример анимации из четырёх кадров*/
+@keyframes coloring {
+	from { background-color: red; }
+	33%  { background-color: yellow; }
+	66%  { background-color: green; }
+	to   { background-color: blue; }
+}
+
+/*пример объединения кадров*/
+@keyframes coloring {
+	from { background-color: red; }
+	33%, 55%  { background-color: yellow; }
+	66%, 88%  { background-color: green; }
+	to   { background-color: blue; }
+}
+
+/*применение двух анимаций к одному объекту*/
+@keyframes rotate {
+	50% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes move {
+	50% {
+		bottom: 0px;
+	}
+	100% {
+		bottom: -50px;
+	}
+}
+
+.animation-functions {
+	animation-name: rotate, move;
+	animation-duration: 3s, 6s;
+	/*количество проигрываний, бесконечное - infinite*/
+	animation-iteration-count: 1; /*0 - нет воспроизведения*/
+	/*направление анимации*/
+	animation-direction: reverse | alternate | alternate-reverse; /*от from к to*/
+	/*задержка анимации*/
+	animation-delay: 10s;
+	/*состояние элемента до и после анимации*/
+	animation-fill-mode: forwards | backwards;
+	/*включает оба состояния до и после анимации*/
+	animation-fill-mode: both;
+	/*остановка анимации*/
+	animation-play-state: paused;
+	/*продолжение (задано по умолчанию)*/
+	animation-play-state: running;
+	/*форма*/
+	animation-timing-function: ease | ease-in | ease-out | ease-in-out;
+	animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	/*шаги*/
+	animation-timing-function: steps(5, start);
+	animation-timing-function: steps(5, end);
+}
+
+.transition {
+	/*длительность перехода*/
+	transition-duration: 1s;
+	/*отдельно для каждого свойства*/
+	transition-property: width, height;
+	transition-duration: 1s, 5s;
+	/*по умолчанию для всех*/
+	transition-property: all;
+	/*задержка*/
+	transition-delay: 4s;
+	/*скорость*/
+	transition-timing-function: ease | linear | steps(4, start | end);
+	/*
+	cubic-bezier(0, 0, 1, 1)    // это linear
+	cubic-bezier(0.42, 0, 1, 1) // это ease 
+	*/
+	/*сокращение: свойство форма длительность задержка*/
+	transition: all linear 3s 1s;
+}
+
+/*приминение data-text <p data-text="hello">world</p>*/
+/*также можно использовать data-title data-description*/
+p::before {
+	content: attr(data-text) " ";
+}
+
+.clip {
+	/*определяет поле видимости элемента только для абсолютно спозиционированного*/
+	clip: rect(верхняя-координата, правая-координата, нижняя-координата, левая-координата);
+}
+
+/*счетчик*/
+.breadcrumbs a::before {
+	counter-reset: flag;
+	content: counter(flag);
+	counter-increment: flag;
+}
+
+/*SVG - картинки в <xml> 
+<!-- Прямоугольник --> 
+<rect width="150" height="100"/>*/
+svg:hover #fb {
+	fill: #ffffff;
+	
+}
+
+/*Таблицы в CSS*/
+.this-is-table {
+    display: table;
+}
+.this-is-table-row {
+    display: table-row;
+}
+.this-is-table-cell {
+    display: table-cell;
+}
+.this-is-caption {
+    display: table-caption;
+    caption-side: bottom;
+}
+.this-is-theead {
+	display: table-header-group; 
+}
+.this-is-footer {
+	display: table-footer-group; 
+}
+.content {
+	display: table-row-group;
+}
+
+.column {
+    display: table-column;
+}
+
+.checklist .column-group {
+    display: table-column-group;
+}
+
+.this-is-table {
+	display: inline-table;
+}
+
+/*Фильтры*/
+.effect {
+	filter: brightness(2); /* увеличивает яркость вдвое */
+	filter: brightness(10%); /* снижает яркость до 10% */
+	filter: brightness(150%); /* увеличивает яркость на 50% */
+
+	filter: grayscale(1); /* полное обесцвечивание */
+	filter: grayscale(50%); /* обесцвечивание наполовину */
+
+	filter: contrast(0.5); /* снижает контрастность наполовину */
+	filter: contrast(50%); /* тоже снижает контрастность до 50% */
+
+	filter: sepia(1); /* полный эффект сепии */
+	filter: sepia(25%); /* эффект сепии применяется на 25% */
+
+	filter: invert(1); /* полная инверсия цвета */
+	filter: invert(50%); /* инверсия цвета наполовину, все цвета серые */
+
+	filter: saturate(2); /* цвета ярче вдвое */
+	filter: saturate(50%); /* цвета вдвое бледнее */
+	filter: saturate(0); /* обесцвеченная картинка */
+
+	filter: hue-rotate(90deg); /* поворот на 90 градусов по часовой */
+	filter: hue-rotate(-90deg); /* поворот на 90 градусов обратно */
+
+	filter: blur(5px); /* размытость в 5px */
+
+	filter: opacity(0.5); /* объект наполовину непрозрачный */
+	filter: opacity(0%); /* полностью прозрачный объект */
+
+	/* 
+        чёрная тень, смещённая на 10px по горизонтали и 
+        на 5px по вертикали, с радиусом размытия 3px
+	*/
+	filter: drop-shadow(10px 5px 3px #000000);
+  
+	/* несмещённая зелёная тень с радиусом размытия 5px */
+	filter: drop-shadow(0px 0px 5px green);
+}
+
+/*Flexbox*/
+.flexbox-container {
+	/*Родительский контейнер*/
+	display: flex;
+	/*Определение главной оси*/
+	flex-direction: row; /*значение по умолчанию, главная ось направлена слева направо.*/
+	flex-direction: column; /*главная ось направлена сверху вниз.*/
+	flex-direction: row-reverse; /*главная ось направлена справа налево.*/
+	flex-direction: column-reverse; /*главная ось направлена снизу вверх.*/
+	/*выравнивание по главной оси*/
+	justify-content: flex-start;
+	justify-content: center;
+	justify-content: flex-end;
+	justify-content: space-between;
+	justify-content: space-around;
+	/*Выравнивание по поперечной оси*/
+	align-items: center;
+	align-items: stretch; /*по умолчанию*/
+	align-items: flex-start;
+	align-items: flex-end;
+	align-items: baseline;
+	/*перенос*/
+	flex-wrap: nowrap; /*по умолчанию перенос флекс-элементов на новую строку запрещён*/
+	flex-wrap: wrap; /*позволяет перенос элементов на новую строку*/
+	flex-wrap: wrap-reverse;
+	/*выравнивание рядов по поперечной оси*/
+	align-content: flex-start;
+	align-content: center;
+	align-content: flex-end;
+	align-content: space-between;
+	align-content: space-around;
+	align-content: stretch; /*по умолчанию*/
+}
+.flexbox-element {
+	/*Дочерний flex-элемент*/
+	/*Выравнивание по поперечной оси*/
+	align-self: center;
+	align-self: stretch; /*по умолчанию*/
+	align-self: flex-start;
+	align-self: flex-end;
+	align-self: baseline;
+
+	/*Порядковы номер элемента начинается с 0*/
+	order: -1; /* этот элемент станет отображаться первым в контейнере 
+	т.к. -1 идет перед 0*/
+
+	/*базовый размер в зависимости от главной оси*/
+	flex-basis: 100px; /* базовый размер 100 пикселей */
+	flex-basis: 50%;   /* базовый размер 50% контейнера */
+
+	/*захват свободного места*/
+	flex-grow: 1;
+	flex-grow: 2;
+
+	/*отрицательное пространство*/
+	flex-shrink: 0; /*значения задаются положительные > 0*/
+	
+	/*Сокращенный вариант*/
+	/*flex-grow | flex-shrink | flex-basis*/
+	flex: 1 2 200px;
+}

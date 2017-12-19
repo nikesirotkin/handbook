@@ -1,17 +1,408 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<h1>Nikolay Sirotkin</h1>
-	<nav><ul>
-		<li>Production</li>
-		<li>Develop</li>
-		<li>Contact</li>
-		<li>Enter</li>
-	</ul></nav>
+<!DOCTYPE html> <!-- Это определение документа как HTML 5 -->
+<html>
+	<head>
+		<meta charset="utf-8"><!-- Мета-тег определяющий кодировку страницы -->
+		<meta name="description" content="Шпоргалка по обучению HTML" ><!-- мета-тег описывающий анотацию к странице -->
+		<meta name="keywords" content="вёрстка, компьютерная грамотность, программирование"><!-- Ключевые слова -->
+		<title>Заголовак страницы</title><!-- Заголовок во вкладке -->
+		<!-- Для быстрого комментирования используй Ctrl + / -->
+		<link rel="stylesheet" href="style.css"><!-- Подключаем файл со стилями CSS -->
+	</head>
+	<body>
+		<h1 id="head">Заголовок первого уровня</h1>
+		<h2>Заголовок второго уровня</h2>
+		<h3>...</h3>
+		<h4>...</h4>
+		<h5>...</h5>
+		<h6>Последней уровень заголовка шестой</h6>
+		<p>Абзац всегда начинается с новой строки</p>
+
+		<!-- Неупорядоченный список -->
+		<ul>
+			<li>Элементы списка</li><!-- Элементы списка -->
+			<li>
+				<ul><!-- Второй уровень списка должен заключатся в тег li -->
+					<li>второй уровень списка</li>
+					<li>второй уровень списка</li>
+					<li>второй уровень списка</li>
+				</ul>
+			</li>     
+			<li>Элементы списка</li>
+			<li>Элементы списка</li>
+		</ul>
+
+		<!-- Упорядоченный список -->
+		<ol start="1">
+		<!-- атрибут start задаёт цифру начального элемента списка -->
+			<li>Раз</li>
+			<li>Два</li>
+			<li>Три</li>
+		</ol>
+
+		<!-- Список определений -->
+		<dl>
+			<dt>Термин</dt>
+			<dd>Определение</dd>
+		</dl>
+		
+		<strong></strong><!-- Определяет важность слова и выделяет его жирным -->
+		<b></b><!-- Выделение жирным -->
+		<em></em><!--  -->
+		<i></i><!-- Курсив -->
+		<br><!-- Перенос строки на новую -->
+		<hr><!-- Отделяет текст линией -->
+		<blockquote></blockquote><!-- Выводит цитату как отдельный блок -->
+		<q></q><!-- Заключает цитату в кавычки -->
+		<cite></cite><!-- Источник цитаты -->
+		<sup></sup><!-- Верхний индекс -->
+		<sub></sub><!-- Нижний индекс -->
+		<del></del><!-- Удалённый текст -->
+		<ins></ins><!-- Добавленный текст -->
+		<pre></pre><!-- Преформатированный текст (Учитывает пробелы, теги) -->
+		<mark></mark><!-- Выделяет текст желтым фоном -->
+
+		<!-- Пример выделения текста -->
+		<p>
+			В данном обзаце рассмотрены теги <strong>выделения</strong> важности слов, а так же выделение слов <b>жирным</b> и <em>курсивом</em>. 
+			<blokquote>Важно видеть во всем смысл</blokquote>
+			<br>Перенос строки, несколько видов цитат как говорится в <cite>народной поговорке</cite> <q>Без труда не выловишь и рыбку из пруда</q>. Ещё написание индекса <sup>верхнего</sup>, а так же <sub>нижнего</sub>. Ну и выделение текста <mark>маркером</mark>. И ещё <del datetime="2017-07-10">удалённый текст</del> и <ins datetime="2017-07-10">новый добавленный текст</ins>. <pre>На последок преформатированный текст   !   !   !</pre>
+		</p>
+
+		<!-- Ссылки -->
+		<a href="index.html">Документ конспект по изучению HTML5</a><!-- Ссылка -->
+		<a href=".."></a><!-- Данная ссылка ведёт назад на одну директорию сайта -->
+		<a href="../../main"></a><!-- На две директория назад и в папку main -->
+		<a href="index.html">Скачать конспект</a><!-- Ссылка на файл -->
+		<a href="#haed">Заголовок</a><!-- Ссылка с якорем (для этого нужно присвоить id любому тегу, при нажатии на ссылку экран прокрутится к якорю) -->
+		<a title="Всплывающая подсказка" href="#">Ссылка со всплывающей подсказкой</a>
+		
+		<!-- Вставка картинки. Для указание размера px писать не нужно-->
+		<img src="logo.png" alt="Альтернативный текст" width="100" height="100">
+
+		<a href="#">
+			<img src="" alt=""><!-- Ссылка изображение -->
+		</a>
+
+		<!-- Таблицы -->
+		<table cellspacing="3"><!-- cellspacing задаёт растояние между ячейками -->
+			<caption>Заголовок таблицы</caption>
+			<tr><!-- Обозначает строку -->
+				<th>First</th><!-- Тег th определяет заголовок таблицы и по умолчанию выделяется жирным и выравнивается по центру -->
+				<th>Second</th>
+			</tr>
+			<tr>
+				<td>Пример</td><!-- Обозначает ячейку в строке -->
+				<td>Содержимого</td><!-- Следующая ячейка в строке -->
+			</tr>
+			<tr><!-- Вторая строка -->
+				<td colspan="2">В этой ячейке, две</td><!-- colspan объединяет ячейку справа -->
+				<!-- на этом месте удалена ячей чтобы она не сдвинулась после объединения -->
+			</tr>
+			<tr>
+				<td rowspan="2">Таков</td><!-- rowspan объединяет ячейку с нижней -->
+				<td>Как он есть</td>
+			</tr>
+			<tr>
+				<!-- на этом месте удалена ячей чтобы она не сдвинулась после объединения -->
+				<td>Вот оно как</td>
+			</tr>
+		</table>
+		<br>
+
+		<!-- Формы -->
+		<form action="index.html" method="get"><!-- method="post" -->
+			<!-- форма ввода текста -->
+			<input type="text" name="search" id="total" value="Значение поля по умолчанию">
+			<!-- для логической связи подписи и поля input используется тег lable -->
+			<label>
+				Подпись к полю ввода <input type="text"><!-- при клике на подпись курсор встанет в поле input -->
+			</label><!-- если подпись и поле в разных местах тогда нужно в label атрибуте for указать id связанного поля -->
+			<label for="words">Отдельная подпись</label>
+
+			<!-- Поле для ввода пароля текст в нём выглядит так: ******* -->
+			<input type="text" id="words" required><br>
+			<!-- Атрибут required обозначает поле обязательным для ввода -->
+			<input type="password"><br>
+
+			<!-- Поле для выбора даты -->
+			<input type="date">
+
+			<!-- Поле для ввода времени -->
+			<input type="time">
+
+			<!-- Кнопка для отправки формы -->
+			<input type="submit" name="" id="" value="Отправить"><br>
+
+			<!-- Кнопка сброса в формах -->
+			<input type="reset" value="Сбросить"><br>
+
+			<!-- Кнопка для управления JavaScript -->
+			<input type="button" value="Кнопка">
+
+			<!-- Кнопка изображение, на сервер передаются координаты кнопки x,y -->
+			<input type="image" src="" alt="Button image"><br>
+
+			<!-- Кнопка button-->
+			<button type="submit">Войти <img src="light.png"></button><br>
+
+			<!-- Многострочное поле ввода текста -->
+			<textarea name="" id="" cols="30" rows="10"><!-- Значение поля между тегами textarea -->Вот здесь</textarea><br>
+
+			<!-- Checkbox -->
+			<input type="checkbox" name="" id="">
+			<!-- checked -->
+			<input type="checkbox" name="" id="" checked>
+			<!-- при нажати на текст галочка снимается или ставится -->
+			<label for="check"><input type="checkbox" id="check">Нажми на текст чтобы поставить галочку</label>
+			
+			<!-- Radobutton -->
+			<input type="radio" name="group1" id="" value="on" checked>
+			<input type="radio" name="group1" id="" value="off"><br>
+
+			<!-- Раскрывающийся список или селект -->
+			<select name="" id="">
+				<option value="on">Включить</option>
+				<option value="off">Выключить</option>
+			</select><br><br><br>
+
+			<!-- Мультиселект -->
+			<select name="days" size="7" multiple>
+				<option>Понедельник</option>
+				<option>Вторник</option>
+				<option>Среда</option>
+				<option>Четверг</option>
+				<option>Пятница</option>
+				<option>Суббота</option>
+				<option selected>Воскресенье</option>
+			</select><br>
+
+	    		<!-- Список возможных значений при вводе текста -->
+			<input type="text" list="browsers" name="browser">
+			<!-- связывает значения атрибут list -->
+			<datalist id="browsers">
+				<option value="Firefox">
+				<option value="Chrome">
+				<option value="Safari">
+			</datalist><br>
+
+			<!-- Поле ввода числового значения -->
+			<input type="number" min="2" max="20" step="2">
+
+			<!-- Поле поиска (появляеьтся крестик для сброса введенного значения) -->
+			<input type="search" autofocus>
+			<!-- Атрибут autofocus может быть только один на странице -->
+
+			<!-- Поля для ввода дат перечиление через | -->
+			<input type="datetime | datetime-local | week | month">
+
+			<!-- Выбор диапазона -->
+			<input type="range" min="1" max="100" step="1">
+
+			
+
+	 </form>
+
+	 <form action="index.html" method="post" enctype="multipart/form-data">
+		
+		<!-- Поле для загрузки файлов -->
+		<input type="file" name="" id="">
+
+		<!-- Скрытое поле -->
+		<input type="hidden" name="" id="">
+
+		</form>
+
+
+		<!-- Блочные элементы -->
+		<div></div>
+
+
+<!-- HTML5-->
+		<header>
+			<!--— шапка сайта или раздела может использоваться много раз -->
+			<nav>
+				<!-- блок меню -->
+			</nav>
+		</header> 
+		<main>
+			<!-- основной раздел сайта тег уникален и используется один раз -->
+			<section>
+				<!-- смысловой или логический раздел, например блок о компании и тд -->
+			</section>
+			<article>
+				<!-- самостоятельный или независимый раздел например статья, пост в блоге, собщение на форуме и тд -->
+				<aside>
+					<!-- это дополнительное содержание, не связанное напрямую с основным. Ещё такие блоки часто называют «сайдбарами» или боковыми панелями. -->
+					<time datetime="2014-04-20">Вчера</time> мы готовили курс к публикации.
+				</aside>
+			</article>
+		</main>
+		<footer>
+			<!-- подвал может использоваться много раз -->
+		</footer>
+		
+		<figure>
+		схема,
+		график,
+		диаграмма
+		и так далее
+		<figcaption>Легенда</figcaption><!-- подпись -->
+		</figure>
+
+		<video 
+			src=""
+			controls 
+			preload="none | metadata | auto" 
+			autoplay 
+			poster="index.jpg" 
+			width="400" 
+			height="225">
+			<source src="video.mp4" type="video/mp4">
+		<source src="video.ogv" type="video/ogg">
+		<source src="video.webm" type="video/webm">
+		</video>
+
+		<audio 
+			src=""
+			controls
+			autoplay
+			preload="none | metadata | auto">
+			<source src="sound.mp3" type="audio/mpeg">
+		<source src="sound.oga" type="audio/ogg">
+		</audio>
+
+		<!-- Вывод результатов тег output -->
+		<form oninput="daysoutput.value=dayscount.value">
+			<input type="range" id="dayscount" name="dayscount" min="1" max="14" step="1">
+			<output name="daysoutput">по умолчанию</output>
+		<br><br>
+
+		<!-- Группировка полей форм -->
+		<fieldset>
+			<legend>Заголовок поля</legend>
+		<input type="text">
+		<input type="text">
+		<input type="text">
+		</fieldset>
+		<fieldset>
+		<textarea></textarea>
+		</fieldset><br><br>
+
+		<!-- Паттерн образ требуемого ввода -->
+		<input type="text" name="passport" required pattern="[0-9]{3}-[0-9]{5}"><br>
+
+		<!-- Поле для ввода телефона -->
+		<input type="tel" required name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}"><br><br>
+		
+		<!-- Пдсказка выводится внутри текстового поля, а при вводе значения — автоматически убирается. -->
+		<input type="text" placeholder="подсказка"><br><br>
 	
-</body>
+		<!-- Поля ввода почты и сайта -->
+		<input type="email">
+		<input type="url">
+		
+		<!-- поле выбора цвета -->
+		<input type="color" value="#ff0000"><br><br>
+
+		<!-- Группа элементов списка -->
+		<select name="variants">
+		<optgroup label="Заголовок группы">
+			<option value="1">Вариант 1</option>
+			<option value="2">Вариант 2</option>
+			<option value="3">Вариант 3</option>
+		</optgroup>
+		<optgroup label="Группа вариантов 2">
+				<option value="4">Вариант 4</option>
+				<option value="5">Вариант 5</option>
+				<option value="6">Вариант 6</option>
+		</optgroup>
+		</select><br><br>
+
+		<!-- Запрет редактирования два варианта -->
+		<!-- readonly не дает пользователю изменять поле (вводить новый текст, модифицировать существующий). Введенное значение можно выделить и скопировать. Данные из этого поля отправляются на сервер. -->
+		<input type="text" readonly>
+		<!-- запрет редактирования такой же, но нельзя поставить фокус в это поле, введенное значение нельзя выделять и копировать. Данные из этого поля НЕ отправляются на сервер. -->
+		<input type="text" disabled><br><br>
+
+		<!-- Управление автозаполнением -->
+		<input type="text" autocomplete="off">
+
+		<!-- Переключение между полями при нажатии Tab -->
+		<input type="text" tabindex="3">
+
+		</form>
+
+		<!-- тег script лучше добавить в конце, перед закрывающим тегов body -->
+		<script src="scripts.js"></script>
+
+		<!-- SVG -->
+		<svg>
+			<!-- Круг -->
+			<circle r="50" cx="50%" cy="50%" fill="yellowgreen"/>
+			<!-- Прямоугольник с размером и координатами -->
+			<rect width="150" height="100"/>
+			<rect width="50%" height="100" x="25%" y="25" fill="orange"/>
+			<!-- Скругление углов -->
+			<rect width="50%" height="100" rx="50" ry="20"/>
+			<!-- Звезда -->
+			<polygon points="70,5 90,41 136,48 103,80 111,126 70,105 29,126 36,80 5,48 48,41"/>
+			<!-- Треугольник -->
+			<polygon points="5,135 115,5 225,135" fill="violet"/>
+		</svg>
+
+		<!-- Пример картины с пирамидами -->
+		<svg width="540" height="290">
+			<rect width="540" height="190" fill="skyblue" />
+			<rect width="540" height="100" fill="yellow" y="190" />
+			<polygon points="90,240 240,70 390,240" fill="goldenrod" />
+			<polygon points="250,260 350,150 450,260" fill="darkgoldenrod" />
+		</svg>
+
+		<svg width="300" height="290">
+		    <rect width="300" height="180" fill="skyblue" />
+		    <rect width="300" height="110" fill="yellowgreen" y="180" />
+		    <rect width="10" height="30" rx="5" x="80" y="230" />
+		    <rect width="10" height="30" rx="5" x="210" y="230" />
+		    <circle r="100" cx="150" cy="160" fill="crimson" />
+		    <circle r="80" cx="150" cy="160" fill="white" />
+		    <circle r="60" cx="150" cy="160" fill="crimson" />
+		    <circle r="40" cx="150" cy="160" fill="white" />
+		    <circle r="20" cx="150" cy="160" fill="crimson" />
+		</svg>
+
+		<!-- Звезда -->
+		<svg width="200" height="200">
+    			<polyline points="50,180 100,20 150,180 20,80 180,80 50,180 100,20" fill="" />
+		</svg>
+
+		<ul class="social">
+
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 10.15 21.74"><path d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#fff"/></svg>
+			</li>
+			<li class="social-hover">
+				<svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 10.15 21.74"><path d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#000"/></svg>
+			</li>
+
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 10.15 21.74"><path d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#fff"/></svg>
+			</li>
+			<li class="social-hover">
+				<svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 10.15 21.74"><path d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#000"/></svg>
+			</li>
+
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 10.15 21.74"><path id="fb" d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z" fill="#000000"/></svg>
+			</li>
+			<li class="social-hover">
+				
+			</li>
+			<li>
+				
+			</li>
+			<li class="social-hover">
+				
+			</li>
+		</ul>
+	</body>
 </html>
